@@ -10,8 +10,8 @@ export function FieldLayout(props) {
 		grid-template: repeat(3, 1fr) / repeat(3, 1fr);
 		box-sizing: border-box;
 		margin: auto;
-		height: 40vw;
-		width: 40vw;
+		height: 30vw;
+		width: 30vw;
 	`;
 
 	function onClickButton(e) {
