@@ -1,7 +1,7 @@
-import React from "react";
+import { AppLayoutProps } from "./App";
 import styled from "styled-components";
 
-export function Restart(props) {
+export function Restart(props: AppLayoutProps) {
     const {cells, setCells, emptyArray, setGameIsOver, setGamer} = props.props;
     const canRestart = cells.filter(item => item !== '').length === 0 ? false : true;
 

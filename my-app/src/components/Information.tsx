@@ -1,7 +1,7 @@
-import React from "react";
+import { AppLayoutProps } from "./App";
 import styled from "styled-components";
 
-export function Informing(props) {
+export function Informing(props: AppLayoutProps) {
     const {gamer, gameIsOver, winner} = props.props;
 
     console.log('Informing', gameIsOver);
@@ -14,7 +14,7 @@ export function Informing(props) {
     )
 }
 
-const GameInfo = styled.div`
+const GameInfo = styled.div<{gameIsOver: boolean}>`
     text-align: center;
     align-content: center;
     margin: auto;
