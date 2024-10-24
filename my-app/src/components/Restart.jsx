@@ -2,12 +2,13 @@ import React from "react";
 import styled from "styled-components";
 
 export function Restart(props) {
-    const {cells, setCells, emptyArray} = props.props;
+    const {cells, setCells, emptyArray, setGameIsOver, setGamer} = props.props;
     const canRestart = cells.filter(item => item !== '').length === 0 ? false : true;
-
 
     function onClickButton() {
         setCells(emptyArray);
+        setGameIsOver(false);
+        setGamer(true);
     }
 
     return(
@@ -18,12 +19,13 @@ export function Restart(props) {
 const RestartButton = styled.button.attrs(props => ({
     'disabled': props['disabled']}))`
     margin: auto;
-    background-color: #f4faff;
-	border: 1px solid #2e9aff;
+    height: 5vw;
+    background-color: #E66983;
+	border: none;
+    border-radius: 3px;
 	&:hover {
-		background-color: #e6ebf0;
+		background-color: #B85468;
 		cursor: pointer;
 	};
-	font-size: 20px;
     width: 20vw;
 `
