@@ -26,6 +26,16 @@ export function AppContainer() {
 	);
 }
 
+function AppLayout(props: AppLayoutProps) {
+	return (
+		<>
+			<Informing props={props.props}/>
+			<FieldContainer props={props.props}/>
+      		<Restart props={props.props}/>
+		</>
+	)
+}
+
 export interface AppLayoutProps{
 	props: {
 		emptyArray: string[], 
@@ -38,14 +48,4 @@ export interface AppLayoutProps{
 		winner: string | null , 
 		setWinner: React.Dispatch<React.SetStateAction<string>>,
 	}
-}
-
-function AppLayout(props: AppLayoutProps) {
-	return (
-		<>
-			<Informing props={props.props}/>
-			<FieldContainer props={props.props}/>
-      		<Restart props={props.props}/>
-		</>
-	)
 }
