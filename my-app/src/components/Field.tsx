@@ -14,7 +14,7 @@ export function FieldContainer(props: AppLayoutProps) {
 
 	function onClickButton(e: any) {
 		const cellId: number = e.target.dataset.id;
-		const newCells: string[] = cells;
+		const newCells: string[] = [...cells];
 
 		if (!newCells[cellId]) {
 			newCells[cellId] = gamer ? "X" : "O";
