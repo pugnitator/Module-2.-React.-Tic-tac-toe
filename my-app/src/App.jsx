@@ -1,6 +1,13 @@
 import './App.css';
+import {useForm} from "react-hook-form";
 
 export function App() {
+  const {
+    register
+  } = useForm()
+
+  console.log(register)
+  
   return (
     <div className="App">
       <header className="App-header">
