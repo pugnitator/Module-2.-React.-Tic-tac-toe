@@ -1,8 +1,8 @@
 import { useState } from "react";
-import "../App.css";
-import { FieldContainer } from "./Field";
-import { Informing } from "./Information";
-import { Restart } from "./Restart";
+import "./App.css";
+import { FieldContainer } from "./components/Field";
+import { Informing } from "./components/Information";
+import { Restart } from "./components/Restart";
 
 export function AppContainer() {
   	const emptyArray: string[] = ["", "", "", "", "", "", "", "", ""];

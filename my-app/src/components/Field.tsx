@@ -1,4 +1,4 @@
-import { AppLayoutProps } from "./App";
+import { AppLayoutProps } from "../App";
 import styled from "styled-components";
 
 export function FieldContainer(props: AppLayoutProps) {
@@ -12,11 +12,14 @@ export function FieldContainer(props: AppLayoutProps) {
 		setWinner,
 	} = props.props;
 
-	function onClickButton(e: any) {
-		const cellId: number = e.target.dataset.id;
+	function onClickButton(e: React.MouseEvent<HTMLDivElement>) {
+		const target = e.target as HTMLButtonElement;
+		console.log(target.dataset.id);
+		const cellId: number = Number(target.dataset.id);
 		const newCells: string[] = [...cells];
 
 		if (!newCells[cellId]) {
+			console.log(newCells[cellId])
 			newCells[cellId] = gamer ? "X" : "O";
 			setCells(newCells);
 
@@ -66,16 +69,27 @@ function Cell(props: CellProps) {
 }
 
 function checkWinner(cells: string[]) {
-	console.log(cells);
-	if (cells[0] === cells[1] && cells[1] === cells[2]) return cells[0];
-	else if (cells[3] === cells[4] && cells[4] === cells[5]) return cells[3];
-	else if (cells[6] === cells[7] && cells[7] === cells[8]) return cells[6];
-	else if (cells[0] === cells[3] && cells[3] === cells[6]) return cells[0];
-	else if (cells[1] === cells[4] && cells[4] === cells[7]) return cells[1];
-	else if (cells[2] === cells[5] && cells[5] === cells[8]) return cells[2];
-	else if (cells[0] === cells[4] && cells[4] === cells[8]) return cells[0];
-	else if (cells[2] === cells[4] && cells[4] === cells[6]) return cells[2];
-	else return "";
+	const winCombinations = [
+		[0, 1, 2], 
+		[3, 4, 5],
+		[6, 7, 8],
+		[0, 3, 6],
+		[1, 4, 7],
+		[2, 5, 8],
+		[0, 4, 8],
+		[2, 4, 6]
+	]
+
+	const checkedArray = winCombinations.map((item) => {
+		const [a, b, c] = item;
+		return cells[a] === cells[b] && cells[b] === cells[c] ? cells[a] : '';
+	})
+
+	console.log(checkedArray);
+
+	const result = checkedArray.find((item) => item === 'X' ? "X" : item === "O" ? "O" : '');
+	console.log(result);
+	return result;
 }
 
 interface CellProps {

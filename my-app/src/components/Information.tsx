@@ -1,4 +1,4 @@
-import { AppLayoutProps } from "./App";
+import { AppLayoutProps } from "../App";
 import styled from "styled-components";
 
 export function Informing(props: AppLayoutProps) {
