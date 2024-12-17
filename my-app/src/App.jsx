@@ -1,28 +1,14 @@
-import './App.css';
-import {useForm} from "react-hook-form";
+import "./App.css";
+import { FieldContainer } from "./components/field/FieldContainer";
+import { Informing } from "./components/Information";
+import { Restart } from "./components/Restart";
 
-export function App() {
-  const {
-    register
-  } = useForm()
-
-  console.log(register)
-  
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export function AppContainer() {
+	return (
+		<>
+			<Informing />
+			<FieldContainer />
+			<Restart />
+		</>
+	);
 }
