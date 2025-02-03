@@ -11,7 +11,7 @@ export function Informing() {
 
     return(
         <GameInfo gameIsOver={gameIsOver}>
-            <Winner hidden={!gameIsOver}>Победитель: {winner}</Winner>
+            <Winner hidden={!gameIsOver}>{winner? `Победитель: ${winner}` : 'Ничья'}</Winner>
             <WhoseTurn hidden={gameIsOver}>Сейчас ход <strong>
                 {currentGamer === X_GAMER? 'крестиков' : 'ноликов'}</strong>
             </WhoseTurn>
