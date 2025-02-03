@@ -18,7 +18,7 @@ export function checkWinner() {
 		const [a, b, c] = item;
 		return cells[a] === cells[b] && cells[b] === cells[c] ? cells[a] : '';
 	});
+
 	const winner = checkedArray.find((item) => item === 'X' ? "X" : item === "O" ? "O" : '');
-	// console.log('checkWinner', winner)
 	return winner;
 }

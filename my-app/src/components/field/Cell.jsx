@@ -1,7 +1,10 @@
 import styled from "styled-components";
+import { useSelector } from "react-redux";
 
 export function Cell(props) {
-	const { index, value, gameIsOver } = props;
+	const gameIsOver = useSelector((state) => state.gameIsOver);
+
+	const { index, value} = props;
 	return (
 		<CellButton data-id={index} disabled={gameIsOver}>
 			{value}

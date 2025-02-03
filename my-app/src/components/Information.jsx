@@ -7,8 +7,6 @@ export function Informing() {
     const winner = useSelector(state => state.winner);
     const currentGamer = useSelector(state => state.currentGamer);
 
-    console.log(gameIsOver);
-
     return(
         <GameInfo gameIsOver={gameIsOver}>
             <Winner hidden={!gameIsOver}>Победитель: {winner}</Winner>

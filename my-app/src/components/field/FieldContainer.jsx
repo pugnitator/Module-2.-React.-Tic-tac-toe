@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { Cell } from "./Cell";
 
 export function FieldContainer() {
-	const state = useSelector((state) => state);
+	const currentField = useSelector((state) => state.currentField);
 	const dispatch = useDispatch();
 
 	function onClickButton(e) {
@@ -23,8 +23,8 @@ export function FieldContainer() {
 
 	return (
 		<Container onClick={(e) => onClickButton(e)}>
-			{state.currentField.map((item, index) => (
-				<Cell key={index} index={index} value={item} gameIsOver={state.gameIsOver} />
+			{currentField.map((item, index) => (
+				<Cell key={index} index={index} value={item} />
 			))}
 		</Container>
 	);
