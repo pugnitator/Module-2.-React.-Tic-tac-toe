@@ -3,7 +3,7 @@ import styled from "styled-components";
 export function Cell(props) {
 	const { index, value, gameIsOver } = props;
 	return (
-		<CellButton data-id={index} disabled={gameIsOver}>
+		<CellButton data-id={index} disabled={gameIsOver || value}>
 			{value}
 		</CellButton>
 	);
