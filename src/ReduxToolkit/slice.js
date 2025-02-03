@@ -16,16 +16,14 @@ const appSlice = createSlice({
     reducers: {
         setCell(state, action) {
             state.currentField[action.payload] = state.currentGamer;
-            // console.log('state from slice', state.currentField)
         },
 
         setWinner(state, action) {
-            // console.log('winner', action.payload)
             state.winner = action.payload;
         },
 
         setGameIsOver(state) {
-            state.gameIsOver = state.winner || state.currentField.find(() => '')
+            state.gameIsOver = state.winner || !state.currentField.includes('')
         },
 
         switchGamer(state) {
